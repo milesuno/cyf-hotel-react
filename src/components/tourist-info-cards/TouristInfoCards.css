@@ -1,0 +1,5 @@
+.tourist-info-card-wrapper {
+	display: flex;
+	justify-content: space-around;
+	flex-wrap: wrap;
+}
