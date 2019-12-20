@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import RestaurantButton from "../restaurant-button/RestaurantButton";
+import './Orders.css';
 
 class Orders extends Component {
 	constructor(props) {

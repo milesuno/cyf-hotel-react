@@ -8,7 +8,7 @@ class TouristInfoCards extends Component {
 		console.log("TouristInfoCard Prop", this.props);
 		const { touristInfo } = this.props;
 		return (
-			<section className="tourist-info-card-wrapper">
+			<section className="tourist-info-card-wrapper container">
 				{touristInfo.map(location => {
 					const { id, name, img, url } = location;
 					return (

@@ -12,10 +12,10 @@ class Restaurant extends Component {
 	render() {
 		const { orderType } = this.state;
 		return (
-			<div>
-				<h3>Restaurant Orders</h3>
+			<section className='container'>
+				<h4>Restaurant Orders</h4>
 				<Orders orderType={orderType}/>
-			</div>
+			</section>
 		);
 	}
 }

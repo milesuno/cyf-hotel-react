@@ -4,6 +4,8 @@
 
 .search-wrapper {
 	border-top: 1px solid #e9ecef;
+	display: flex;
+    justify-content: space-between;
 }
 
 .search-box label {
@@ -21,4 +23,8 @@
 
 .search-row input {
 	margin-right: 10px;
+}
+
+.search-box {
+	width: 450px;
 }

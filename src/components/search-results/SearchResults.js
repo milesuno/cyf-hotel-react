@@ -17,41 +17,41 @@ class SearchResults extends Component {
 	};
 
 	render() {
+		console.log("SR Props", this.props.results);
 		return (
-			<table className="table">
-				<thead>
-					<tr>
-						<th scope="col">Title</th>
-						<th scope="col">First Name</th>
-						<th scope="col">Surname</th>
-						<th scope="col">Email</th>
-						<th scope="col">Room ID</th>
-						<th scope="col">Check in date</th>
-						<th scope="col">Check out date</th>
-						<th scope="col">Stay Duration</th>
-					</tr>
-				</thead>
-				<tbody>
-					{data
-						.filter(obj => {
-							const { searchVal } = this.props;
-							return obj.firstName === searchVal; // || obj.roomId === 1;
-						})
-						.map(obj => {
-							return (
-								<tr key={obj.id} onClick={this.selected}>
-									<td>{obj.title}</td>
-									<td>{obj.firstName}</td>
-									<td>{obj.surname}</td>
-									<td>{obj.email}</td>
-									<td>{obj.roomId}</td>
-									<td>{obj.checkInDate}</td>
-									<td>{obj.checkOutDate}</td>
-								</tr>
-							);
-						})}
-				</tbody>
-			</table>
+			<>
+				{this.props.results ? (
+					<table className="table">
+						<thead>
+							<tr>
+								<th scope="col">Title</th>
+								<th scope="col">First Name</th>
+								<th scope="col">Surname</th>
+								<th scope="col">Email</th>
+								<th scope="col">Room ID</th>
+								<th scope="col">Check in date</th>
+								<th scope="col">Check out date</th>
+								<th scope="col">Stay Duration</th>
+							</tr>
+						</thead>
+						<tbody>
+							{this.props.results.map(obj => {
+								return (
+									<tr key={obj.id} onClick={this.selected}>
+										<td>{obj.title}</td>
+										<td>{obj.firstName}</td>
+										<td>{obj.surname}</td>
+										<td>{obj.email}</td>
+										<td>{obj.roomId}</td>
+										<td>{obj.checkInDate}</td>
+										<td>{obj.checkOutDate}</td>
+									</tr>
+								);
+							})}
+						</tbody>
+					</table>
+				) : null}
+			</>
 		);
 	}
 }
