@@ -10,9 +10,9 @@ const Heading = () => {
 					src="https://image.flaticon.com/icons/svg/139/139899.svg"
 					className="header-img"
 				/>
-				CYF Hotel
+				<h1>CYF Hotel</h1>
+				<Clock />
 			</header>
-			<Clock />
 		</>
 	);
 };

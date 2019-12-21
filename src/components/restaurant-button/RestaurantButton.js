@@ -6,9 +6,20 @@ class RestaurantButton extends Component {
 	}
 	render() {
 		return (
-			<button className="btn btn-primary" onClick={this.props.addOrder}>
-				Add
-			</button>
+			<>
+				<button
+					className="btn btn-primary"
+					onClick={() => this.props.onIncrement(this.props.food.id)}
+				>
+					+
+				</button>
+				<button
+					className="btn btn-primary"
+					onClick={() => this.props.onDecrement(this.props.food.id)}
+				>
+					-
+				</button>
+			</>
 		);
 	}
 }

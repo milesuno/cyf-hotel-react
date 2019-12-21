@@ -1,3 +1,18 @@
+.order-wrapper {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
 ul {
 	border-top: 2px solid #e9ecef;
+	list-style-type: none;
+}
+
+ul li {
+	margin: 0.75rem;
+}
+
+ul li button {
+	margin: 0.5rem;
 }

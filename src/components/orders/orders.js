@@ -1,34 +1,33 @@
 import React, { Component } from "react";
 import RestaurantButton from "../restaurant-button/RestaurantButton";
-import './Orders.css';
+import "./Orders.css";
 
 class Orders extends Component {
 	constructor(props) {
 		super(props);
-		this.state = { orders: 0 };
 	}
 
-	addOrder = () => {
-		let orders = this.state.orders;
-		orders++;
-		this.setState({ orders });
-	};
-
 	render() {
-		const { orders } = this.state;
-		const { orderType } = this.props;
+		const { orderType, onIncrement, onDecrement } = this.props;
 
 		return (
-			<ul>
-				{orderType.map(order => {
-					return (
-						<li>
-							{order}: {orders}
-							<RestaurantButton addOrder={this.addOrder} />
-						</li>
-					);
-				})}
-			</ul>
+			<div >
+				<ul className="order-wrapper">
+					{orderType.map(food => {
+						return (
+							<li>
+								{food.name}: {food.orders}
+								<RestaurantButton
+									food={food}
+									onIncrement={onIncrement}
+									onDecrement={onDecrement}
+								/>
+							</li>
+						);
+					})}
+					<button className="btn btn-primary">Place Order</button>
+				</ul>
+			</div>
 		);
 	}
 }

@@ -1,0 +1,20 @@
+.make-booking {
+    padding: 5px 0 20px 0;
+}
+
+.booking-form {
+	justify-content: center;
+	align-items: center;
+}
+
+@media (max-width: 1203px) {
+	.booking-form {
+		flex-wrap: wrap;
+	}
+}
+
+@media (max-width: 892px) {
+	.booking-form {
+		flex-direction: column;
+	}
+}

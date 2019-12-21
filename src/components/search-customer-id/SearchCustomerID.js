@@ -17,13 +17,12 @@ class SearchCustomerID extends Component {
 						this.props.search(this.state.searchInput);
 					}}
 				>
-					<label htmlFor="customerID">Customer ID</label>
+					<label>Customer ID
 					<div className="search-row">
 						<input
 							type="text"
-							id="customerID"
 							className="form-control"
-							placeholder="Customer ID"
+							placeholder="Enter Room"
 							value={this.state.searchInput}
 							onChange={e => {
 								this.setState({
@@ -33,6 +32,7 @@ class SearchCustomerID extends Component {
 						/>
 						<button className="btn btn-primary">Search ID</button>
 					</div>
+					</label>
 				</form>
 			</>
 		);

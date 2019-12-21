@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import Search from "../search/Search.js";
 import SearchResults from "../search-results/SearchResults.js";
 import "./Bookings.css";
-// import SearchResults from "./SearchResults.js";
+import MakeBooking from "../make-booking/MakeBooking.js";
 import FakeBookings from "../../data/fakeBookings.json";
 import { type } from "os";
 
@@ -15,15 +15,17 @@ class Bookings extends Component {
 		};
 	}
 
-	//Filter fakeBookings then pass the data to SearchResults
-
 	search = searchVal => {
 		console.info("TO DO!", searchVal);
 
 		let results = this.state.fakeBookings.filter(obj => {
-			return obj.firstName === searchVal || obj.surname === searchVal || obj.roomId == searchVal;
+			return (
+				obj.firstName === searchVal ||
+				obj.surname === searchVal ||
+				obj.roomId == searchVal
+			);
 		});
-    console.log('results in search', results)
+		console.log("results in search", results);
 		this.setState({ results });
 	};
 
@@ -34,22 +36,20 @@ class Bookings extends Component {
 			.catch(err => err);
 	}
 
-	// getResult = () => {
-
-	// }
-
 	render() {
 		console.log("Bookings State fakeBookings", this.state.fakeBookings);
 
 		console.log("Bookings State Results", this.state.results);
-		const { searchVal, fakeBookings } = this.state;
+		const { results, fakeBookings } = this.state;
 		return (
-			<div className="App-content">
-				<div className="container">
-					<Search search={this.search} />
+			<section className="bookings-wrapper container">
+				<Search search={this.search} />
+				{results ? (
 					<SearchResults results={this.state.results} />
-				</div>
-			</div>
+				) : (
+					<MakeBooking />
+				)}
+			</section>
 		);
 	}
 }

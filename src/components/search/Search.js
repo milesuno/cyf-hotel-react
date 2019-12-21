@@ -12,9 +12,7 @@ class Search extends Component {
 		const { search } = this.props;
 		return (
 			<div className="search">
-				<div className="page-header">
-					<h4 className="text-left">Search Bookings</h4>
-				</div>
+				<h4>Search Bookings</h4>
 				<div className="row search-wrapper">
 					<SearchCustomerID search={search} />
 					<SearchCustomerName search={search} />

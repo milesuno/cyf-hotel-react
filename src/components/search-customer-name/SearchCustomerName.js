@@ -7,7 +7,7 @@ class SearchCustomerName extends Component {
 			searchInput: ""
 		};
 	}
-	state = {};
+
 	render() {
 		return (
 			<>
@@ -18,22 +18,20 @@ class SearchCustomerName extends Component {
 						this.props.search(this.state.searchInput);
 					}}
 				>
-					<label htmlFor="customerName">Customer name</label>
-					<div className="search-row">
-						<input
-							type="text"
-							id="customerName"
-							className="form-control"
-							placeholder="Customer Name"
-							value={this.state.searchInput}
-							onChange={e => {
-								this.setState({
-									searchInput: e.target.value
-								});
-							}}
-						/>
-						<button className="btn btn-primary">Search Name</button>
-					</div>
+					<label>
+						Customer name
+						<div className="search-row">
+							<input
+								type="text"
+								className="form-control"
+								placeholder="Enter your name"
+								value={this.state.searchInput}
+							/>
+							<button className="btn btn-primary">
+								Search Name
+							</button>
+						</div>
+					</label>
 				</form>
 			</>
 		);

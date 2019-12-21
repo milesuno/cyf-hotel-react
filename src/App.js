@@ -43,9 +43,11 @@ class App extends Component {
 		return (
 			<div className="App">
 				<Heading />
-				<TouristInfoCards touristInfo={touristInfo} />
-				<Bookings />
-				<Restaurant />
+				<main>
+					<TouristInfoCards touristInfo={touristInfo} />
+					<Bookings />
+					<Restaurant />
+				</main>
 				<Footer address={address} />
 			</div>
 		);
